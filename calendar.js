@@ -44,5 +44,8 @@ function setColor(element, color) {
 }
 
 function saveEvent (showList) {
-    
+    var valueToSave = showList.target.previousElementSibling.children[0].value;
+    var keyToSave = showList.target.previousElementSibling.children[0].name;
+
+    localStorage.setItem(keyToSave, valueToSave);
 }
