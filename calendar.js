@@ -27,7 +27,7 @@ Array.from(rows).forEach(row => {
 
         //If current time is greater than the row time, the row is green (indicates future)
         } else if ((currentHour > rowHour)){
-            setColor(row, "green");
+            setColor(row, "lightgreen");
 
         //If current time is earlier than the row time, the row is gray (indicates past)
         } else if ((currentHour < rowHour)){
@@ -48,4 +48,14 @@ function saveEvent (showList) {
     var keyToSave = showList.target.previousElementSibling.children[0].name;
 
     localStorage.setItem(keyToSave, valueToSave);
+}
+
+for (i = 0; i < saveContent.length; i++) {
+    saveContent[i].addEventListener("click", saveEvent)
+}
+
+for (i = 0; i < textContent.length; i++) {
+    var savedText = localStorage.getItem(i+9);
+    console.log(savedText);
+    textContent[i].value = savedText;
 }
