@@ -23,18 +23,26 @@ Array.from(rows).forEach(row => {
     if (rowHour) {
         //If the current time is equal to the row's time, make the row red (indicates present)
         if (currentHour === rowHour) {
-            setColor(row, 'red');
+            setColor(row, "red");
 
         //If current time is greater than the row time, the row is green (indicates future)
         } else if ((currentHour > rowHour)){
-            setColor(row, 'green');
+            setColor(row, "green");
 
         //If current time is earlier than the row time, the row is gray (indicates past)
         } else if ((currentHour < rowHour)){
-            setColor(row,'lightgrey');
+            setColor(row,"lightgrey");
 
         } else {
-            setColor(row,'white');
+            setColor(row,"white");
         }
     }
 });
+
+function setColor(element, color) {
+    element.style.backgroundColor = color;
+}
+
+function saveEvent (showList) {
+    
+}
